@@ -8,19 +8,27 @@ namespace Calculation.Core.Calculator.Persistence
 {
     internal sealed class CalculatorStateLoader :
         IEventHandler<MonoReferenceLoaded<CalculatorResultViewReferenceData>>,
+        IEventHandler<MonoReferenceLoaded<CalculatorInputViewReferenceData>>,
         IEventHandler<DataLoaded<SaveData>>,
         IAutoRegistrableEventHandler
     {
-        private string _textValue;
+        private string _equationText;
+        private string _resultText;
 
         public void Handle(DataLoaded<SaveData> eventData)
         {
-            _textValue = eventData.Data.ResultText;
+            _equationText = eventData.Data.EquationText;
+            _resultText = eventData.Data.ResultText;
+        }
+
+        public void Handle(MonoReferenceLoaded<CalculatorInputViewReferenceData> eventData)
+        {
+            eventData.Data.InputField.text = _equationText;
         }
 
         public void Handle(MonoReferenceLoaded<CalculatorResultViewReferenceData> eventData)
         {
-            eventData.Data.ResultText.SetText(_textValue);
+            eventData.Data.ResultText.SetText(_resultText);
         }
     }
 }
