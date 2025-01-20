@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 namespace ModuleInstallation.Core
 {
-    internal sealed class LocalModuleInstaller : ModuleInstaller<ILocalModuleInstaller>
+    internal sealed class LocalModuleInstaller : ModuleInstaller<ILocalModuleEntry>
     {
-        protected override bool CanBind(ILocalModuleInstaller installer)
+        protected override bool CanBind(ILocalModuleEntry entry)
         {
-            var bindingScenes = installer.BindingScenes;
+            var bindingScenes = entry.BindingScenes;
             
             return
                 bindingScenes.HasFlag(BindingScene.Any) ||
