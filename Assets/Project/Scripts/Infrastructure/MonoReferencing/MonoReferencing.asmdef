@@ -1,0 +1,19 @@
+{
+    "name": "MonoReferencing",
+    "rootNamespace": "MonoReferencing",
+    "references": [
+        "GUID:e9e0d67f9df594affb0bd6b8148c2f55",
+        "ModuleInstallation",
+        "Zenject",
+        "Events"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

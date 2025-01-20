@@ -1,0 +1,17 @@
+{
+    "name": "ModuleInstallation",
+    "rootNamespace": "ModuleInstallation",
+    "references": [
+        "GUID:e3bbfe13dce44c66bfbbd36d9393fe83",
+        "Zenject"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
