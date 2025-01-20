@@ -19,8 +19,9 @@ namespace Calculation.Core.Calculator.View
 
         public void ShowResult(string result)
         {
-            if (!string.IsNullOrEmpty(_resultText.text)) _resultText.text += Constants.StringTransfer;
-            _resultText.text += result;
+            _resultText.text ??= string.Empty;
+            _resultText.text = _resultText.text.Insert(0, Constants.StringTransfer);
+            _resultText.text = _resultText.text.Insert(0, result);
         }
     }
 }

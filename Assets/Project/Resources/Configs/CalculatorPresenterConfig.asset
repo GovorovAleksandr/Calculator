@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resultFormat: '{0}={1}'
   _invalidInputMessage: Please check the expression you just entered
+  _invalidInputResult: ERROR

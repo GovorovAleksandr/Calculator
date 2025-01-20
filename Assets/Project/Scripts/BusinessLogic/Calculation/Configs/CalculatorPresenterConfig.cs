@@ -8,8 +8,11 @@ namespace Calculation.Configs
         [SerializeField] private string _resultFormat = "{0}={1}";
         [Multiline]
         [SerializeField] private string _invalidInputMessage = "";
+        [Multiline]
+        [SerializeField] private string _invalidInputResult = "ERROR";
         
         public string ResultFormat => _resultFormat;
         public string InvalidInputMessage => _invalidInputMessage;
+        public string InvalidInputResult => _invalidInputResult;
     }
 }

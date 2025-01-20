@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using Zenject;
 
-namespace Popup
+namespace Calculation.Core.Calculator.View
 {
     [RequireComponent(typeof(RectTransform))]
     internal sealed class TextHeightTransformAdjuster : MonoBehaviour, IEventHandler<ResultCalculated>

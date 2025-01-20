@@ -25,6 +25,7 @@ namespace Calculation.Entry
             container.BindInterfacesTo<CalculatorPresenter>().FromNew().AsSingle().NonLazy();
             
             container.BindInterfacesTo<ResultView>().FromNew().AsSingle().NonLazy();
+            container.BindInterfacesTo<PopupView>().FromNew().AsSingle().NonLazy();
             
             container.BindInterfacesTo<CalculatorStatePreserver>().FromNew().AsSingle().NonLazy();
             container.BindInterfacesTo<CalculatorStateLoader>().FromNew().AsSingle().NonLazy();

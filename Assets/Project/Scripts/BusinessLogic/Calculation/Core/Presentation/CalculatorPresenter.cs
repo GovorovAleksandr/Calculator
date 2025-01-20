@@ -41,24 +41,18 @@ namespace Calculation.Core.Presentation
                 .Replace(Constants.StringTransfer, string.Empty)
                 .Split(Constants.PlusChar)
                 .Select(part => part.TrimStart(Constants.ZeroChar)));
-            
+    
             if (_lastEquation == normalizedEquation) return;
             _lastEquation = normalizedEquation;
-            
-            if (!_validator.Validate(normalizedEquation))
-            {
-                _eventBus.Send(new ShowDialogWindow(_config.InvalidInputMessage));
-                return;
-            }
 
-            var numbers = _inputParser.Parse(normalizedEquation);
-            var result = _calculator.Sum(numbers);
-
-            var resultText = string.Format(_config.ResultFormat, normalizedEquation, result);
-
-            _resultView.ShowResult(resultText);
-
+            var isValid = _validator.Validate(normalizedEquation);
+            var result = isValid ? _calculator.Sum(_inputParser.Parse(normalizedEquation)) : 0;
+            var fullEquationText = string.Format(_config.ResultFormat, normalizedEquation, isValid ? result : _config.InvalidInputResult);
+    
+            _resultView.ShowResult(fullEquationText);
             _eventBus.Send(new ResultCalculated(result));
+
+            if (!isValid) _eventBus.Send(new ShowDialogWindow(_config.InvalidInputMessage));
         }
     }
 }
